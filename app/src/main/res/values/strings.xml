@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">CipherMessage</string>
+    <string name="question_account_text">Already have an account?</string>
+    <string name="sign_up_button_text" translatable="false">Sign Up</string>
+    <string name="password_text_hint" translatable="false">Password</string>
+    <string name="email_text_hint" translatable="false">E-mail</string>
+    <string name="username_text_hint" translatable="false">Username</string>
+    <string name="sign_in_button_text" translatable="false">Sign In</string>
+</resources>
