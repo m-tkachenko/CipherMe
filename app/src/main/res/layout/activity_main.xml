@@ -21,7 +21,7 @@
         android:background="@drawable/login_password_username_style"
         android:hint="@string/username_text_hint"
         android:inputType="textPersonName"
-        android:text=""
+        android:textColor="@color/colorWhite"
         android:paddingLeft="24dp" />
 
     <EditText
@@ -30,6 +30,7 @@
         android:layout_width="290dp"
         android:layout_height="45dp"
         android:layout_centerHorizontal="true"
+
         android:layout_marginBottom="24dp"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"

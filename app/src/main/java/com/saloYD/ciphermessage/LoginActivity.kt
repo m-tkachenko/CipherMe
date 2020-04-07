@@ -1,8 +1,11 @@
 package com.saloYD.ciphermessage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -13,13 +16,43 @@ class LoginActivity : AppCompatActivity() {
 
 
         sign_in_button.setOnClickListener {
-
-            val email = edit_email_login_activity.text.toString()
-            Log.d("LoginActivity", "Email: $email")
-
-            val password = edit_password_login_activity.text.toString()
-            Log.d("LoginActivity", "Password: $password")
+            doSignIn()
         }
 
+        button_textview_back_to_reg.setOnClickListener {
+
+            Log.d("LoginActivity", "Back to MainActivity")
+
+            finish()
+        }
+    }
+
+    private fun doSignIn() {
+
+        val email = edit_email_login_activity.text.toString()
+        Log.d("LoginActivity", "Email: $email")
+
+        val password = edit_password_login_activity.text.toString()
+        Log.d("LoginActivity", "Password: $password")
+
+        if(email.isEmpty() || password.isEmpty()) {
+
+            Toast.makeText(this, "Please enter email or password", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener{
+                if(!it.isSuccessful) return@addOnCompleteListener
+
+                val userUid = it.result?.user?.uid
+                Log.d("LoginActivity", "Not new user uid: $userUid")
+            }
+
+            .addOnFailureListener {
+                Log.d("LoginActivity", "Fail of sign in: ${it.message}")
+                Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
+
+            }
     }
 }

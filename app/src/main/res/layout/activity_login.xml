@@ -14,6 +14,7 @@
         android:layout_marginTop="200dp"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:textColor="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:autofillHints=""
@@ -29,6 +30,7 @@
         android:layout_width="290dp"
         android:layout_height="45dp"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"
         android:hint="@string/password_text_hint"
@@ -46,5 +48,15 @@
         android:layout_marginBottom="16dp"
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/button_textview_back_to_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_in_button"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:text="@string/back_to_registration_text_button"/>
 
 </RelativeLayout>

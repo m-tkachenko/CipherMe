@@ -6,4 +6,6 @@
     <string name="email_text_hint" translatable="false">E-mail</string>
     <string name="username_text_hint" translatable="false">Username</string>
     <string name="sign_in_button_text" translatable="false">Sign In</string>
+    <string name="back_to_registration_text_button">Back to registration</string>
 </resources>
+

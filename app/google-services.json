@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "8314274794",
+    "firebase_url": "https://cipherme-3dbb2.firebaseio.com",
+    "project_id": "cipherme-3dbb2",
+    "storage_bucket": "cipherme-3dbb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8314274794:android:746763e8fa5c865a68a893",
+        "android_client_info": {
+          "package_name": "com.saloYD.ciphermessage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8314274794-6j83ddcasqh73tnrhcdacaoni1time6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiobdjzSFySunl2ROiN_xV0kc8ovqI2FQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8314274794-6j83ddcasqh73tnrhcdacaoni1time6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
