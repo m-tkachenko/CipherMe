@@ -14,9 +14,10 @@
         android:layout_marginTop="200dp"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:fontFamily="@font/ubuntu_font"
         android:textColor="@color/colorWhite"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"
         android:hint="@string/email_text_hint"
@@ -29,6 +30,7 @@
         android:layout_below="@id/edit_email_login_activity"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:fontFamily="@font/ubuntu_font"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorWhite"
         android:autofillHints=""
@@ -44,6 +46,8 @@
         android:layout_below="@id/edit_password_login_activity"
         android:textColor="@color/colorCoolGrey"
         android:text="@string/sign_in_button_text"
+        android:textSize="15sp"
+        android:fontFamily="@font/ubuntu_font"
         android:background="@drawable/button_sign_up_in_style"
         android:layout_marginBottom="16dp"
         android:textAllCaps="false"
@@ -57,6 +61,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
+        android:fontFamily="@font/ubuntu_font"
         android:text="@string/back_to_registration_text_button"/>
 
 </RelativeLayout>

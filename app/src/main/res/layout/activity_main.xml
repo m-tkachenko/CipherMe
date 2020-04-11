@@ -9,14 +9,36 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        app:civ_border_width="3dp"
+        app:civ_border_color="@color/colorMatrixGreen"
+        android:id="@+id/select_photo_image_view"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"/>
+
+    <Button
+        android:id="@+id/select_photo_button"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="48dp"
+        android:hint="@string/photo_text_button"
+        android:fontFamily="@font/ubuntu_font"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_photo_select_style"
+        android:textAllCaps="false"/>
 
     <EditText
         android:id="@+id/edit_username"
         android:layout_width="290dp"
         android:layout_height="45dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/ubuntu_font"
+        android:layout_marginBottom="16dp"
         android:layout_centerHorizontal="true"
+        android:layout_below="@id/select_photo_button"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"
         android:hint="@string/username_text_hint"
@@ -29,9 +51,10 @@
         android:layout_below="@id/edit_username"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:fontFamily="@font/ubuntu_font"
         android:layout_centerHorizontal="true"
-
-        android:layout_marginBottom="24dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"
         android:hint="@string/email_text_hint"
@@ -40,11 +63,13 @@
 
     <EditText
         android:id="@+id/edit_password"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="35dp"
         android:layout_below="@id/edit_email"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:fontFamily="@font/ubuntu_font"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"
         android:hint="@string/password_text_hint"
@@ -58,9 +83,11 @@
         android:layout_below="@id/edit_password"
         android:textColor="@color/colorCoolGrey"
         android:text="@string/sign_up_button_text"
+        android:textSize="15sp"
         android:background="@drawable/button_sign_up_in_style"
         android:layout_marginBottom="16dp"
         android:textAllCaps="false"
+        android:fontFamily="@font/ubuntu_font"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -69,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/sign_up_button"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/ubuntu_font"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
         android:text="@string/question_account_text"/>

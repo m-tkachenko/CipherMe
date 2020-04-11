@@ -7,5 +7,8 @@
     <string name="username_text_hint" translatable="false">Username</string>
     <string name="sign_in_button_text" translatable="false">Sign In</string>
     <string name="back_to_registration_text_button">Back to registration</string>
+    <string name="photo_text_button">Select photo</string>
+    <string name="cipherme_string">CipherMe</string>
+    <string name="select_user_string">Select user</string>
 </resources>
 

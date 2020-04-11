@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorCuteGray"
+    tools:context=".MessagesActivity">
+
+    <RelativeLayout
+        android:id="@+id/status_bar_layout"
+        android:layout_width="345dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/status_bar_style">
+
+        <TextView
+            android:id="@+id/cipherme_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cipherme_string"
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="35sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_margin="16dp" />
+
+        <Button
+            android:id="@+id/new_message_button"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp"
+            android:text="new"
+            android:layout_toRightOf="@id/cipherme_text_view"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cipherme_text_view"
+            android:layout_marginEnd="11dp" />
+
+        <Button
+            android:layout_marginTop="16dp"
+            android:text="Out"
+            android:layout_toEndOf="@id/new_message_button"
+            android:id="@+id/sign_out_button"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/new_message_button"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="12dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
