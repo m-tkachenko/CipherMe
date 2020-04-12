@@ -139,4 +139,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class User (val userUid : String, val username : String, val  userImage : String)
+class User (val userUid : String, val username : String, val  userImage : String) {
+
+    constructor() : this("","","")
+}

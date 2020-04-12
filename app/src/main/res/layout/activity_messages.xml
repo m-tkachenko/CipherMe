@@ -4,50 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorCuteGray"
+    android:background="@color/colorCoolGrey"
     tools:context=".MessagesActivity">
 
     <RelativeLayout
         android:id="@+id/status_bar_layout"
-        android:layout_width="345dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/status_bar_style">
 
         <TextView
             android:id="@+id/cipherme_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="42dp"
+            android:fontFamily="@font/ubuntu_font"
             android:text="@string/cipherme_string"
             android:textColor="@color/colorMatrixGreen"
-            android:textSize="35sp"
-            android:fontFamily="@font/ubuntu_font"
-            android:layout_margin="16dp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/new_message_button"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="10dp"
-            android:text="new"
-            android:layout_toRightOf="@id/cipherme_text_view"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="10dp"
             android:layout_toEndOf="@id/cipherme_text_view"
-            android:layout_marginEnd="11dp" />
+            android:layout_toRightOf="@id/cipherme_text_view"
+            android:text="new" />
 
         <Button
-            android:layout_marginTop="16dp"
-            android:text="Out"
-            android:layout_toEndOf="@id/new_message_button"
             android:id="@+id/sign_out_button"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/new_message_button"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
             android:layout_marginRight="11dp"
-            android:layout_marginEnd="12dp" />
+            android:layout_toEndOf="@id/new_message_button"
+            android:layout_toRightOf="@id/new_message_button"
+            android:text="Out" />
 
     </RelativeLayout>
 
