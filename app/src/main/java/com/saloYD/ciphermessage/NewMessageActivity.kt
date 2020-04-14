@@ -1,5 +1,6 @@
 package com.saloYD.ciphermessage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -53,6 +54,14 @@ class NewMessageActivity : AppCompatActivity() {
                     if(user != null) {
                         adapter.add(UserItem(user))
                     }
+                }
+                
+                adapter.setOnItemClickListener { item, view ->
+
+                    val intent = Intent(view.context, ChatActivity::class.java)
+                    startActivity(intent)
+
+                    finish()
                 }
 
                 recyclerview_users_messages.adapter = adapter

@@ -47,6 +47,13 @@ class LoginActivity : AppCompatActivity() {
 
                 val userUid = it.result?.user?.uid
                 Log.d("LoginActivity", "Not new user uid: $userUid")
+
+                intent = Intent(this, MessagesActivity::class.java)
+
+                // Clear our stack of activities // Very cool
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+                startActivity(intent)
             }
 
             .addOnFailureListener {

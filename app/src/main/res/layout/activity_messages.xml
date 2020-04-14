@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorCoolGrey"
+    android:background="@color/colorCoolWhite"
     tools:context=".MessagesActivity">
 
     <RelativeLayout
@@ -23,35 +23,38 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="42dp"
+            android:layout_marginRight="56dp"
             android:fontFamily="@font/ubuntu_font"
             android:text="@string/cipherme_string"
             android:textColor="@color/colorMatrixGreen"
-            android:textSize="25sp" />
+            android:textSize="30sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="56dp" />
 
         <Button
             android:id="@+id/new_message_button"
-            android:layout_width="68dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="16dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="9dp"
             android:layout_marginEnd="11dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="12dp"
             android:layout_toEndOf="@id/cipherme_text_view"
+            android:background="@drawable/new_message_icon_button"
             android:layout_toRightOf="@id/cipherme_text_view"
-            android:text="new" />
+            />
 
         <Button
             android:id="@+id/sign_out_button"
-            android:layout_width="68dp"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_centerVertical="true"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginRight="11dp"
             android:layout_toEndOf="@id/new_message_button"
             android:layout_toRightOf="@id/new_message_button"
-            android:text="Out" />
+            android:background="@drawable/signout_icon_button"
+            android:layout_marginStart="8dp" />
 
     </RelativeLayout>
 

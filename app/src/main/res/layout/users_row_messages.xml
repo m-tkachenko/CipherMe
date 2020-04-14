@@ -9,10 +9,9 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circle_username_photo_row"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="8dp"/>
-
 
     <TextView
         android:id="@+id/username_textview_newmessage_row"
