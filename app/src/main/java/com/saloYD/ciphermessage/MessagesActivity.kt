@@ -18,7 +18,7 @@ class MessagesActivity : AppCompatActivity() {
         Log.d("MessagesActivity", "Here in messages")
         checkUserIsLoged()
 
-        new_message_button.setOnClickListener {
+        new_message_button_activity.setOnClickListener {
 
             userNewMessage()
         }

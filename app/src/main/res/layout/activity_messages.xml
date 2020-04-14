@@ -11,9 +11,6 @@
         android:id="@+id/status_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/status_bar_style">
 
@@ -32,7 +29,7 @@
             android:layout_marginEnd="56dp" />
 
         <Button
-            android:id="@+id/new_message_button"
+            android:id="@+id/new_message_button_activity"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="9dp"
@@ -51,8 +48,8 @@
             android:layout_marginEnd="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="11dp"
-            android:layout_toEndOf="@id/new_message_button"
-            android:layout_toRightOf="@id/new_message_button"
+            android:layout_toEndOf="@id/new_message_button_activity"
+            android:layout_toRightOf="@id/new_message_button_activity"
             android:background="@drawable/signout_icon_button"
             android:layout_marginStart="8dp" />
 

@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/chating_activity"
+    android:background="@color/colorCuteGrey"
     tools:context=".ChatActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/status_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/status_bar_style">
+
+        <Button
+            android:id="@+id/return_to_messages_button"
+            android:layout_marginLeft="16dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_back_style_button"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/return_to_messages_button"
+            android:fontFamily="@font/ubuntu_font"
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="30sp"
+            android:layout_marginStart="32dp"
+            android:layout_toEndOf="@id/return_to_messages_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chating_edittext_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorCuteGrey">
+
+        <EditText
+            android:id="@+id/new_message_edittext"
+            android:textColor="@color/colorCoolWhite"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:hint="Enter message"
+            android:layout_centerVertical="true" />
+
+        <Button
+            android:id="@+id/new_message_button"
+            android:background="@drawable/send_button_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/new_message_edittext"
+            android:layout_toEndOf="@id/new_message_edittext" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/status_bar_layout"
+        android:layout_above="@id/chating_edittext_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
