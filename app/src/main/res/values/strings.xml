@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">CipherMessage</string>
+    <string name="app_name" translatable="false">CipherMe</string>
     <string name="question_account_text">Already have an account?</string>
     <string name="sign_up_button_text" translatable="false">Sign Up</string>
     <string name="password_text_hint" translatable="false">Password</string>
