@@ -16,6 +16,9 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import android.graphics.Bitmap
+import android.os.Parcel
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import kotlin.reflect.typeOf
 
 class MainActivity : AppCompatActivity() {
@@ -139,7 +142,9 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class User (val userUid : String, val username : String, val  userImage : String) {
+@Parcelize
+class User (val userUid : String, val username : String, val  userImage : String) : Parcelable {
 
     constructor() : this("","","")
+
 }

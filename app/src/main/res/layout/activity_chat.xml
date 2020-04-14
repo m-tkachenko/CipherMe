@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/chating_activity"
-    android:background="@color/colorCuteGrey"
+    android:background="@color/colorWhite"
     tools:context=".ChatActivity">
 
     <RelativeLayout
@@ -26,16 +26,18 @@
             android:layout_marginStart="16dp" />
 
         <TextView
+            android:id="@+id/username_textview_chat_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="48dp"
             android:layout_marginTop="6dp"
             android:layout_toRightOf="@id/return_to_messages_button"
             android:fontFamily="@font/ubuntu_font"
             android:textColor="@color/colorMatrixGreen"
-            android:textSize="30sp"
-            android:layout_marginStart="32dp"
+            android:textSize="36sp"
+            android:text="Username"
+            android:layout_marginBottom="3dp"
+            android:layout_marginStart="16dp"
             android:layout_toEndOf="@id/return_to_messages_button" />
     </RelativeLayout>
 
@@ -45,13 +47,14 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="4dp"
-        android:background="@color/colorCuteGrey">
+        android:background="@color/colorWhite">
 
         <EditText
             android:id="@+id/new_message_edittext"
-            android:textColor="@color/colorCoolWhite"
+            android:textColor="@color/colorCoolGrey"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
+            android:fontFamily="@font/ubuntu_font"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:hint="Enter message"
@@ -71,8 +74,10 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_chat"
         android:layout_below="@id/status_bar_layout"
         android:layout_above="@id/chating_edittext_layout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

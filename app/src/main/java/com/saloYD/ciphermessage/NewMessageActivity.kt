@@ -29,11 +29,12 @@ class NewMessageActivity : AppCompatActivity() {
             finish()
         }
 
-//        val adapter = GroupAdapter<GroupieViewHolder>()
-//
-//        recyclerview_users_messages.adapter = adapter
-//
         searchUsers()
+    }
+
+    companion object {
+
+        const val USER_KEY = "USER_KEY"
     }
 
     private fun searchUsers(){
@@ -58,7 +59,11 @@ class NewMessageActivity : AppCompatActivity() {
                 
                 adapter.setOnItemClickListener { item, view ->
 
+                    val userItem = item as UserItem
+
                     val intent = Intent(view.context, ChatActivity::class.java)
+//                    intent.putExtra(USER_KEY,  userItem.user.username)
+                    intent.putExtra(USER_KEY, userItem.user)
                     startActivity(intent)
 
                     finish()
