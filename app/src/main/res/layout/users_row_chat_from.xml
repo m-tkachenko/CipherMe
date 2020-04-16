@@ -12,7 +12,7 @@
         android:background="@color/colorCoolWhite"/>
 
     <TextView
-        android:id="@+id/text_of_message"
+        android:id="@+id/text_of_message_from"
         android:layout_width="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_height="wrap_content"

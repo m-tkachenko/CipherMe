@@ -7,6 +7,8 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.users_row_chat_from.view.*
+import kotlinx.android.synthetic.main.users_row_chat_to.view.*
 
 
 class ChatActivity : AppCompatActivity() {
@@ -27,20 +29,25 @@ class ChatActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        setupData()
+
+    }
+
+    private fun setupData() {
+
         val adapter = GroupAdapter<GroupieViewHolder>( )
 
-        adapter.add(ChatFromItem())
-        adapter.add(ChatToItem())
-        adapter.add(ChatFromItem())
-        adapter.add(ChatToItem())
+        adapter.add(ChatFromItem("from message to whatever"))
+        adapter.add(ChatToItem("to message from me because i want to do it for you"))
 
         recyclerview_chat.adapter = adapter
     }
 }
 
-class ChatFromItem : Item<GroupieViewHolder>() {
+class ChatFromItem(val userText : String) : Item<GroupieViewHolder>() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
 
+        viewHolder.itemView.text_of_message_from.text = userText
     }
 
     override fun getLayout(): Int {
@@ -48,9 +55,10 @@ class ChatFromItem : Item<GroupieViewHolder>() {
     }
 }
 
-class ChatToItem : Item<GroupieViewHolder>() {
+class ChatToItem(val userText : String) : Item<GroupieViewHolder>() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
 
+        viewHolder.itemView.text_of_message_to.text = userText
     }
 
     override fun getLayout(): Int {
