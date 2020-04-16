@@ -24,9 +24,13 @@ class ChatActivity : AppCompatActivity() {
         val TAG = "ChatActivity"
     }
 
+    val adapter = GroupAdapter<GroupieViewHolder>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
+
+        recyclerview_chat.adapter = adapter
 
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
 
@@ -58,7 +62,19 @@ class ChatActivity : AppCompatActivity() {
             override fun onChildAdded(p0: DataSnapshot, p1: String?) {
 
                 val chatMessage = p0.getValue(ChatMessage::class.java)
-                Log.d(TAG, chatMessage?.text)
+
+                if (chatMessage != null) {
+                    Log.d(TAG, chatMessage.text)
+
+                    if (chatMessage.fromId == FirebaseAuth.getInstance().uid) {
+
+                        adapter.add(ChatFromItem(chatMessage.text))
+                    }
+                    else {
+
+                        adapter.add(ChatToItem(chatMessage.text))
+                    }
+                }
             }
 
             override fun onCancelled(p0: DatabaseError) {}
