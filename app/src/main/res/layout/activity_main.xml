@@ -53,7 +53,7 @@
         android:layout_height="45dp"
         android:fontFamily="@font/ubuntu_font"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/colorCoolGrey"
+        android:textColor="@color/colorWhite"
         android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:background="@drawable/login_password_username_style"

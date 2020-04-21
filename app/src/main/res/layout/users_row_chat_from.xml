@@ -10,7 +10,9 @@
         android:layout_height="60dp"
         android:layout_margin="8dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/colorMatrixGreen" />
+        app:civ_border_color="@color/colorMatrixGreen"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <TextView
         android:id="@+id/text_of_message_from"
@@ -18,8 +20,8 @@
         android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
         android:background="@drawable/chat_message_text"
-        android:layout_toRightOf="@id/circle_username_photo_row_chat_from"
-        android:layout_toEndOf="@id/circle_username_photo_row_chat_from"
+        android:layout_toLeftOf="@id/circle_username_photo_row_chat_from"
+        android:layout_toStartOf="@id/circle_username_photo_row_chat_from"
         android:layout_centerVertical="true"
         android:textSize="16sp"
         android:fontFamily="@font/ubuntu_font"

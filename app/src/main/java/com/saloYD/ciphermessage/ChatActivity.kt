@@ -10,6 +10,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.saloYD.ciphermessage.Classes.ChatMessage
+import com.saloYD.ciphermessage.Classes.User
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -56,7 +57,9 @@ class ChatActivity : AppCompatActivity() {
 
     private fun listenForMessages() {
 
-        val reference = FirebaseDatabase.getInstance().getReference("/messages")
+        val fromId = FirebaseAuth.getInstance().uid
+        val toId = toUser?.userUid
+        val reference = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId")
 
         reference.addChildEventListener(object: ChildEventListener{
 
@@ -94,14 +97,21 @@ class ChatActivity : AppCompatActivity() {
         val fromId = FirebaseAuth.getInstance().uid ?: return
         val toId = user.userUid
 
-        val reference = FirebaseDatabase.getInstance().getReference("/messages").push()
-        val chatMessage = ChatMessage(reference.key!!, messageText,  fromId, toId, System.currentTimeMillis() / 1000)
+//        val reference = FirebaseDatabase.getInstance().getReference("/messages").push()
+        val fromReference = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
+        val toReference = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
 
-        reference.setValue(chatMessage)
+        val chatMessage = ChatMessage(fromReference.key!!, messageText,  fromId, toId, System.currentTimeMillis() / 1000)
+
+        fromReference.setValue(chatMessage)
             .addOnSuccessListener {
 
-                Log.d(TAG, "Message saved to firebase: ${reference.key} ")
+                Log.d(TAG, "Message saved to firebase: ${fromReference.key}")
+                new_message_edittext.text.clear()
+                recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
             }
+
+        toReference.setValue(chatMessage)
     }
 }
 

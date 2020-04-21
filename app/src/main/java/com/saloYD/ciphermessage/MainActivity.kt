@@ -18,6 +18,7 @@ import java.util.*
 import android.graphics.Bitmap
 import android.os.Parcel
 import android.os.Parcelable
+import com.saloYD.ciphermessage.Classes.User
 import kotlinx.android.parcel.Parcelize
 import kotlin.reflect.typeOf
 
@@ -140,11 +141,4 @@ class MainActivity : AppCompatActivity() {
                 Log.d("MainActivity", "Not saved info about user to database")
             }
     }
-}
-
-@Parcelize
-class User (val userUid : String, val username : String, val  userImage : String) : Parcelable {
-
-    constructor() : this("","","")
-
 }
