@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    android:background="@drawable/status_bar_style">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_photo_message"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorMatrixGreen"
+        android:background="@color/colorWhite"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_font"
+        android:layout_toRightOf="@id/circle_photo_message"
+        android:layout_toEndOf="@id/circle_photo_message"
+        android:layout_centerVertical="true"
+        android:text="Username"
+        android:textSize="30sp"
+        android:textColor="@color/colorMatrixGreen"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Sun"
+        android:textColor="@color/colorMatrixGreen"
+        android:layout_margin="8dp"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

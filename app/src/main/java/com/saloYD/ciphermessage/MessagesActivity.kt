@@ -12,6 +12,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.saloYD.ciphermessage.Classes.User
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
+import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_messages.*
 
 class MessagesActivity : AppCompatActivity() {
@@ -29,15 +32,29 @@ class MessagesActivity : AppCompatActivity() {
         Log.d("MessagesActivity", "Here in messages")
         checkUserIsLoged()
 
-        new_message_button_activity.setOnClickListener {
+        setupUserRows()
 
-            userNewMessage()
+        new_message_button_activity.setOnClickListener { userNewMessage() }
+        sign_out_button.setOnClickListener { userSignOut() }
+    }
+
+    class LatestMessageRow: Item<GroupieViewHolder>() {
+        override fun getLayout(): Int {
+            return R.layout.latest_messages_row
         }
 
-        sign_out_button.setOnClickListener {
-
-            userSignOut()
+        override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         }
+    }
+
+    private fun setupUserRows() {
+        val adapter = GroupAdapter<GroupieViewHolder>()
+
+        adapter.add(LatestMessageRow())
+        adapter.add(LatestMessageRow())
+        adapter.add(LatestMessageRow())
+
+        recyclerview_latest_messages.adapter = adapter
     }
 
     private fun findCurrentUser() {

@@ -25,5 +25,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorMatrixGreen"
         android:fontFamily="@font/ubuntu_font"
-        android:text="Username"/>
+        android:text="Username"
+        android:layout_toEndOf="@id/circle_username_photo_row" />
 </RelativeLayout>
