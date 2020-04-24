@@ -84,7 +84,6 @@ class UserItem(val user: User): Item<GroupieViewHolder>() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
 
         viewHolder.itemView.username_textview_newmessage_row.text = user.username
-
         Picasso.get().load(user.userImage).into(viewHolder.itemView.circle_username_photo_row)
     }
 
