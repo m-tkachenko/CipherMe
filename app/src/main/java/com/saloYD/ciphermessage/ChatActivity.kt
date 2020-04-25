@@ -46,14 +46,13 @@ class ChatActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        new_message_button.setOnClickListener {
+        listenForMessages()
 
-            listenForMessages()
+        new_message_button.setOnClickListener {
 
             Log.d(TAG, "Atempt to send message")
             doToSendMessage()
         }
-
     }
 
     private fun listenForMessages() {

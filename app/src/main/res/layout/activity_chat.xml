@@ -14,7 +14,6 @@
         android:id="@+id/status_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="4dp"
         android:background="@drawable/status_bar_style">
 
         <Button
@@ -47,7 +46,6 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="4dp"
         android:background="#8e8e8e">
 
         <EditText
