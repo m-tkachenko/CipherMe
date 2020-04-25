@@ -9,12 +9,14 @@ import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.saloYD.ciphermessage.Classes.ChatMessage
+import com.saloYD.ciphermessage.Classes.LatestMessageRow
 import com.saloYD.ciphermessage.Classes.User
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_messages.*
+import kotlinx.android.synthetic.main.latest_messages_row.view.*
 
 class MessagesActivity : AppCompatActivity() {
 
@@ -35,6 +37,13 @@ class MessagesActivity : AppCompatActivity() {
         checkUserIsLoged()
 
 //        setupUserRows()
+        adapter.setOnItemClickListener{ item, view ->
+            val intent = Intent(this, ChatActivity::class.java)
+            val row = item as LatestMessageRow
+
+            intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
+            startActivity(intent)
+        }
 
         listenForLatestMessages()
 
@@ -42,14 +51,7 @@ class MessagesActivity : AppCompatActivity() {
         sign_out_button.setOnClickListener { userSignOut() }
     }
 
-    class LatestMessageRow: Item<GroupieViewHolder>() {
-        override fun getLayout(): Int {
-            return R.layout.latest_messages_row
-        }
 
-        override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        }
-    }
 
 //    val latestMessagesMap = HashMap<String, ChatMessage>()
 //
@@ -68,7 +70,7 @@ class MessagesActivity : AppCompatActivity() {
                 val chatMessages = p0.getValue(ChatMessage::class.java) ?: return
 //                latestMessagesMap[p0.key!!] = chatMessages
 //                refreshRecylerViewMessages()
-                adapter.add(LatestMessageRow())
+                adapter.add(LatestMessageRow(chatMessages))
             }
 
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {
@@ -78,10 +80,6 @@ class MessagesActivity : AppCompatActivity() {
             override fun onChildMoved(p0: DataSnapshot, p1: String?) {}
             override fun onChildRemoved(p0: DataSnapshot) {}
         })
-    }
-
-    private fun setupUserRows() {
-
     }
 
     private fun findCurrentUser() {

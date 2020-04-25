@@ -49,7 +49,7 @@ class ChatActivity : AppCompatActivity() {
         new_message_button.setOnClickListener {
 
             listenForMessages()
-            
+
             Log.d(TAG, "Atempt to send message")
             doToSendMessage()
         }
@@ -81,6 +81,8 @@ class ChatActivity : AppCompatActivity() {
                         adapter.add(ChatToItem(chatMessage.text, toUser!!))
                     }
                 }
+
+                recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
             }
 
             override fun onCancelled(p0: DatabaseError) {}
