@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/message_style_row">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circle_username_photo_row_chat_from"
@@ -17,18 +20,17 @@
     <TextView
         android:id="@+id/text_of_message_from"
         android:layout_width="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_margin="8dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/chat_message_text"
         android:layout_toLeftOf="@id/circle_username_photo_row_chat_from"
         android:layout_toStartOf="@id/circle_username_photo_row_chat_from"
         android:layout_centerVertical="true"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:fontFamily="@font/ubuntu_font"
         android:padding="16dp"
-        android:maxWidth="260dp"
+        android:maxWidth="312dp"
         android:text="This is my message, with more lines for check about this my message woidowiej"
-        android:textColor="@color/colorCoolGrey"/>
+        android:textColor="@color/colorMatrixGreen"/>
 
 
 

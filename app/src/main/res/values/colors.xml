@@ -6,6 +6,7 @@
     <color name="colorCoolGrey">#323c3e</color>
     <color name="colorCuteGrey">#808281</color>
     <color name="colorMatrixGreen">#00b43e</color>
+    <color name="colorDarkGreen">#102e17</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorCoolWhite">#eaffe9</color>
 </resources>

@@ -4,9 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:id="@+id/chating_activity"
-    android:background="@color/colorWhite"
+    android:background="@color/colorCoolGrey"
     tools:context=".ChatActivity">
 
     <RelativeLayout
@@ -47,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="4dp"
-        android:background="@color/colorWhite">
+        android:background="#8e8e8e">
 
         <EditText
             android:id="@+id/new_message_edittext"

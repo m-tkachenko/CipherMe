@@ -48,9 +48,10 @@ class ChatActivity : AppCompatActivity() {
 
         new_message_button.setOnClickListener {
 
+            listenForMessages()
+            
             Log.d(TAG, "Atempt to send message")
             doToSendMessage()
-            listenForMessages()
         }
 
     }
