@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorCoolGrey">
+
+    <EditText
+        android:id="@+id/edittext_key_cipher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter key"
+        android:textColor="@color/colorMatrixGreen"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/ubuntu_font"
+        android:textColorHint="@color/colorMatrixGreen"
+        android:backgroundTint="@color/colorMatrixGreen"/>
+
+</LinearLayout>

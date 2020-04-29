@@ -19,8 +19,8 @@
         <Button
             android:id="@+id/return_to_messages_button"
             android:layout_marginLeft="16dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:background="@drawable/arrow_back_style_button"
             android:layout_marginStart="16dp" />
@@ -35,7 +35,7 @@
             android:fontFamily="@font/ubuntu_font"
             android:text="@string/select_user_string"
             android:textColor="@color/colorMatrixGreen"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:layout_marginStart="32dp"
             android:layout_toEndOf="@id/return_to_messages_button" />
 

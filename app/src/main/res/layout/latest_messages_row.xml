@@ -24,7 +24,7 @@
         android:layout_toEndOf="@id/circle_photo_message"
         android:layout_centerVertical="true"
         android:text="Username"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textColor="@color/colorMatrixGreen"/>
 
 </RelativeLayout>
