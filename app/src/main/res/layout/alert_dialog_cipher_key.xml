@@ -17,4 +17,22 @@
         android:textColorHint="@color/colorMatrixGreen"
         android:backgroundTint="@color/colorMatrixGreen"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+            <Button
+                android:id="@+id/ok_button_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Ok"
+                android:fontFamily="@font/ubuntu_font"
+                android:textSize="20sp"
+                android:background="@color/colorMatrixGreen"/>
+
+    </LinearLayout>
+
 </LinearLayout>

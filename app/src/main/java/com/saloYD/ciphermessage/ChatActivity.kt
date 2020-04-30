@@ -87,7 +87,7 @@ class ChatActivity : AppCompatActivity() {
 
         new_message_button.setOnLongClickListener {
 
-            doEncryptMessages()
+            alertCipherDialog()
 
             return@setOnLongClickListener false
         }
@@ -131,16 +131,19 @@ class ChatActivity : AppCompatActivity() {
 
     private fun alertCipherDialog() {
 
-        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Enter cipher key")
+        val dView = LayoutInflater.from(this).inflate(R.layout.alert_dialog_cipher_key, null)
 
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener{dialog, which ->
-            dialog.dismiss()
-            val encryptKey = edittext_key_cipher.text.toString().toInt()
-        })
+        val dBuilder = AlertDialog.Builder(this)
+            .setView(dView)
+            .setTitle("Cipher key")
 
-        val alertDialog: AlertDialog = builder.create()
-        alertDialog.show()
+        val alertDialog = dBuilder.show()
+
+        dView.ok_button_key.setOnClickListener {
+            alertDialog.dismiss()
+
+            val cipherKey = dView.edittext_key_cipher.text.toString().toInt()
+        }
 
     }
 
@@ -202,6 +205,9 @@ class ChatActivity : AppCompatActivity() {
         val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
         latestMessageToRef.setValue(chatMessage)
     }
+
+    fun compute(body: (foo: String) -> Unit) { body.invoke("problem solved") }
+
 }
 
 class ChatFromItem(val userText : String, val user : User) : Item<GroupieViewHolder>() {
