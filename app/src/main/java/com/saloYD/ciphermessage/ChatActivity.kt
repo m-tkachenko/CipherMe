@@ -1,12 +1,10 @@
 package com.saloYD.ciphermessage
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
@@ -20,8 +18,13 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_chat.*
-import kotlinx.android.synthetic.main.alert_dialog_cipher_key.*
-import kotlinx.android.synthetic.main.alert_dialog_cipher_key.view.*
+import kotlinx.android.synthetic.main.alert_dialog_decrypt.*
+import kotlinx.android.synthetic.main.alert_dialog_decrypt.view.*
+import kotlinx.android.synthetic.main.alert_dialog_decrypt.view.textview_message_content_decrypt
+import kotlinx.android.synthetic.main.alert_dialog_decrypted_message.*
+import kotlinx.android.synthetic.main.alert_dialog_decrypted_message.view.*
+import kotlinx.android.synthetic.main.alert_dialog_decrypted_message.view.decrypted_message_textview
+import kotlinx.android.synthetic.main.alert_dialog_encrypt.view.*
 import kotlinx.android.synthetic.main.users_row_chat_from.view.*
 import kotlinx.android.synthetic.main.users_row_chat_to.view.*
 
@@ -87,7 +90,7 @@ class ChatActivity : AppCompatActivity() {
 
         new_message_button.setOnLongClickListener {
 
-            alertCipherDialog()
+            alertDialogEncrypt()
 
             return@setOnLongClickListener false
         }
@@ -112,6 +115,11 @@ class ChatActivity : AppCompatActivity() {
 
                         val currentUser = MessagesActivity.currentUser
                         adapter.add(ChatFromItem(chatMessage.text, currentUser!!))
+
+                        adapter.setOnItemClickListener { item, view ->
+
+                            alertDialogDecrypt(chatMessage.text)
+                        }
                     }
                     else {
 
@@ -129,30 +137,67 @@ class ChatActivity : AppCompatActivity() {
         })
     }
 
-    private fun alertCipherDialog() {
+    private fun alertDialogDecrypt(messageContent: String) {
 
-        val dView = LayoutInflater.from(this).inflate(R.layout.alert_dialog_cipher_key, null)
+        val dViewDecrypt = LayoutInflater.from(this).inflate(R.layout.alert_dialog_decrypt, null)
+        val dBuilderDecrypt = AlertDialog.Builder(this)
+            .setView(dViewDecrypt)
 
-        val dBuilder = AlertDialog.Builder(this)
-            .setView(dView)
-            .setTitle("Cipher key")
+        val alertDialogDecrypt = dBuilderDecrypt.show()
 
-        val alertDialog = dBuilder.show()
+        dViewDecrypt.textview_message_content_decrypt.text = messageContent
 
-        dView.ok_button_key.setOnClickListener {
-            alertDialog.dismiss()
+        dViewDecrypt.ok_button_key_decrypt.setOnClickListener {
 
-            val cipherKey = dView.edittext_key_cipher.text.toString().toInt()
+            val cipherKeyDecrypt = dViewDecrypt.edittext_key_cipher_decrypt.text.toString().toInt()
+            var messageDecrypted = decrypt(messageContent, cipherKeyDecrypt)
+
+            alertDialogDecryptedMessage(messageDecrypted)
+
+            alertDialogDecrypt.dismiss()
+        }
+    }
+
+    private fun alertDialogDecryptedMessage(messageDecryptedContent: String) {
+
+        val dViewDecryptedMessage = LayoutInflater.from(this).inflate(R.layout.alert_dialog_decrypted_message, null)
+        val dBuilderDecryptedMessage = AlertDialog.Builder(this)
+            .setView(dViewDecryptedMessage)
+
+        val alertDialogDecryptedMessage = dBuilderDecryptedMessage.show()
+
+        dViewDecryptedMessage.decrypted_message_textview.text = messageDecryptedContent
+
+        dViewDecryptedMessage.ok_button_decrypted.setOnClickListener {
+
+            alertDialogDecryptedMessage.dismiss()
+        }
+    }
+
+    private fun alertDialogEncrypt() {
+
+        val dViewEncrypt = LayoutInflater.from(this).inflate(R.layout.alert_dialog_encrypt, null)
+        val dBuilderEncrypt = AlertDialog.Builder(this)
+            .setView(dViewEncrypt)
+
+        val alertDialogEncrypt = dBuilderEncrypt.show()
+
+        dViewEncrypt.ok_button_key_encrypt.setOnClickListener {
+
+            val cipherKeyEncrypt = dViewEncrypt.edittext_key_cipher_encrypt.text.toString().toInt()
+
+            alertDialogEncrypt.dismiss()
+            doEncryptMessages(cipherKeyEncrypt)
         }
 
     }
 
-    private fun doEncryptMessages() {
+    private fun doEncryptMessages(cipherKey: Int) {
 
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
 
         var messageText = new_message_edittext.text.toString()
-        val encryptMessage = encrypt(messageText, 3)
+        val encryptMessage = encrypt(messageText, cipherKey)
         messageText = encryptMessage
 
         val fromId = FirebaseAuth.getInstance().uid ?: return
@@ -166,7 +211,7 @@ class ChatActivity : AppCompatActivity() {
         fromReference.setValue(chatMessage)
             .addOnSuccessListener {
 
-                Log.d(TAG, "Message saved to firebase: ${fromReference.key}")
+                Log.d(TAG, "Encrypt message saved to firebase: ${fromReference.key}")
                 new_message_edittext.text.clear()
                 recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
             }

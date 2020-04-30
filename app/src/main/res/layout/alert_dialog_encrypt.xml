@@ -6,15 +6,31 @@
     android:orientation="vertical"
     android:background="@color/colorCoolGrey">
 
-    <EditText
-        android:id="@+id/edittext_key_cipher"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter key"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/encrypt_title_alert_dialog"
+            android:fontFamily="@font/ubuntu_font"
+            android:textColor="@color/colorCoolWhite"
+            android:textSize="23sp"
+            android:layout_margin="12dp"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edittext_key_cipher_encrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_cipher_key_string"
         android:textColor="@color/colorMatrixGreen"
         android:layout_margin="4dp"
         android:fontFamily="@font/ubuntu_font"
-        android:textColorHint="@color/colorMatrixGreen"
+        android:textColorHint="@color/colorCuteGrey"
         android:backgroundTint="@color/colorMatrixGreen"/>
 
     <LinearLayout
@@ -24,11 +40,12 @@
         android:gravity="center">
 
             <Button
-                android:id="@+id/ok_button_key"
+                android:id="@+id/ok_button_key_encrypt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:text="Ok"
+                android:text="@string/ok_string"
+                android:textColor="@color/colorCoolWhite"
                 android:fontFamily="@font/ubuntu_font"
                 android:textSize="20sp"
                 android:background="@color/colorMatrixGreen"/>

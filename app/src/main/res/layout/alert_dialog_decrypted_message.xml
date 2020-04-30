@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorCoolGrey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decrypted_message_title_alert_dialog"
+            android:fontFamily="@font/ubuntu_font"
+            android:textColor="@color/colorCoolWhite"
+            android:textSize="23sp"
+            android:layout_margin="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/decrypted_message_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decrypted_message_title_alert_dialog"
+            android:textColor="@color/colorMatrixGreen"
+            android:fontFamily="@font/ubuntu_font"
+            android:textSize="25sp"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/ok_button_decrypted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorMatrixGreen"
+            android:layout_margin="8dp"
+            android:text="@string/ok_string"
+            android:textColor="@color/colorCoolWhite"
+            android:fontFamily="@font/ubuntu_font"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</LinearLayout>

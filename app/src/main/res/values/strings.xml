@@ -10,5 +10,10 @@
     <string name="photo_text_button">Select photo</string>
     <string name="cipherme_string">CipherMe</string>
     <string name="select_user_string">Select user</string>
+    <string name="ok_string">Ok</string>
+    <string name="enter_cipher_key_string">Enter cipher key</string>
+    <string name="decrypt_title_alert_dialog">Decrypt message</string>
+    <string name="encrypt_title_alert_dialog">Encrypt message</string>
+    <string name="decrypted_message_title_alert_dialog">Decrypted message</string>
 </resources>
 
