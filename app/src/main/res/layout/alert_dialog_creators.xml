@@ -14,6 +14,7 @@
 
 
         <TextView
+            android:id="@+id/creators_string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/creators_string"
@@ -25,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mykhailo Tkachenko"
+            android:text="@string/creator_misha"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="25sp"
             android:fontFamily="@font/ubuntu_font"
@@ -34,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nr albumu: 24932"
+            android:text="@string/creator_misha_album"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="20sp"
             android:fontFamily="@font/ubuntu_font"
@@ -43,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Karyna Prylutska"
+            android:text="@string/creator_karyna"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="25sp"
             android:fontFamily="@font/ubuntu_font"
@@ -53,7 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nr albumu: 24929"
+            android:text="@string/creator_karyna_album"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="20sp"
             android:fontFamily="@font/ubuntu_font"

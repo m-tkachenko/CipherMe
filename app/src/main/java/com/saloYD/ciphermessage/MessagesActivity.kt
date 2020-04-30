@@ -5,22 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.saloYD.ciphermessage.Classes.ChatMessage
 import com.saloYD.ciphermessage.Classes.LatestMessageRow
 import com.saloYD.ciphermessage.Classes.User
-import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
-import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_messages.*
 import kotlinx.android.synthetic.main.alert_dialog_creators.view.*
-import kotlinx.android.synthetic.main.alert_dialog_encrypt.view.*
-import kotlinx.android.synthetic.main.latest_messages_row.view.*
 
 class MessagesActivity : AppCompatActivity() {
 
@@ -52,7 +46,11 @@ class MessagesActivity : AppCompatActivity() {
 
         new_message_button_activity.setOnClickListener { userNewMessage() }
         sign_out_button.setOnClickListener { userSignOut() }
-        creators_button.setOnClickListener{creatorsButton()}
+        creators_button.setOnClickListener{ creatorsButton() }
+        creators_button.setOnLongClickListener {
+            creatorsButtonEgg()
+            return@setOnLongClickListener false
+        }
     }
 
     private fun listenForLatestMessages() {
@@ -117,6 +115,19 @@ class MessagesActivity : AppCompatActivity() {
             .setView(dViewCreator)
 
         val alertDialogCreator = dBuilderCreator.show()
+
+        dViewCreator.ok_button_creators.setOnClickListener { alertDialogCreator.dismiss() }
+    }
+
+    private fun creatorsButtonEgg() {
+
+        val dViewCreator = LayoutInflater.from(this).inflate(R.layout.alert_dialog_creators, null)
+        val dBuilderCreator = AlertDialog.Builder(this)
+            .setView(dViewCreator)
+
+        val alertDialogCreator = dBuilderCreator.show()
+
+        dViewCreator.creators_string.text = "God loves you!"
 
         dViewCreator.ok_button_creators.setOnClickListener { alertDialogCreator.dismiss() }
     }

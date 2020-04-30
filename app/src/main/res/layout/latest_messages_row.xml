@@ -23,7 +23,7 @@
         android:layout_toRightOf="@id/circle_photo_message"
         android:layout_toEndOf="@id/circle_photo_message"
         android:layout_centerVertical="true"
-        android:text="Username"
+        android:text="@string/username_default_string"
         android:textSize="28sp"
         android:textColor="@color/colorMatrixGreen"/>
 

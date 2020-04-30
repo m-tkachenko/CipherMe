@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -32,7 +33,7 @@
             android:id="@+id/textview_message_content_decrypt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Message user text content"
+            android:text="@string/decrypt_title_alert_dialog"
             android:layout_margin="8dp"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="20sp"
@@ -56,7 +57,9 @@
             android:backgroundTintMode="src_in"
             android:background="@drawable/edittext_style"
             android:padding="10dp"
-            android:inputType="phone"/>
+            android:inputType="phone"
+            android:importantForAutofill="no"
+            tools:targetApi="lollipop"/>
     </LinearLayout>
 
     <LinearLayout

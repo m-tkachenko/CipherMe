@@ -29,7 +29,7 @@
         android:fontFamily="@font/ubuntu_font"
         android:padding="16dp"
         android:maxWidth="312dp"
-        android:text="This is my message, with more lines for check about this my message woidowiej"
+        android:text="@string/message_default_string"
         android:textColor="@color/colorMatrixGreen"/>
 
 

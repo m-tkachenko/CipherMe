@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +21,8 @@
         android:background="@drawable/login_password_username_style"
         android:hint="@string/email_text_hint"
         android:inputType="textEmailAddress"
-        android:paddingLeft="24dp" />
+        android:paddingLeft="24dp"
+        android:paddingStart="24dp" />
 
     <EditText
         android:id="@+id/edit_password_login_activity"
@@ -37,7 +37,8 @@
         android:background="@drawable/login_password_username_style"
         android:hint="@string/password_text_hint"
         android:inputType="textPassword"
-        android:paddingLeft="24dp" />
+        android:paddingLeft="24dp"
+        android:paddingStart="24dp" />
 
     <Button
         android:id="@+id/sign_in_button"

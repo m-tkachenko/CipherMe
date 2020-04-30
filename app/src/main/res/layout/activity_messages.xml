@@ -57,6 +57,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_centerVertical="true"
             android:background="@drawable/creators_button_style" />
 

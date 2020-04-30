@@ -10,12 +10,19 @@
     <string name="photo_text_button">Select photo</string>
     <string name="cipherme_string">CipherMe</string>
     <string name="select_user_string">Select user</string>
-    <string name="ok_string">Ok</string>
+    <string name="ok_string">OK</string>
     <string name="enter_cipher_key_string">Enter cipher key</string>
     <string name="decrypt_title_alert_dialog">Decrypt message</string>
     <string name="encrypt_title_alert_dialog">Encrypt message</string>
     <string name="decrypted_message_title_alert_dialog">Decrypted message</string>
     <string name="enter_message_string">Enter message</string>
     <string name="creators_string">Creators</string>
+    <string name="creator_misha">Mykhailo Tkachenko</string>
+    <string name="creator_misha_album">Nr albumu: 24932</string>
+    <string name="creator_karyna">Karyna Prylutska</string>
+    <string name="creator_karyna_album">Nr albumu: 24929</string>
+    <string name="default_decrypt_text">Message user text content</string>
+    <string name="username_default_string">Username</string>
+    <string name="message_default_string">Message</string>
 </resources>
 

@@ -1,9 +1,9 @@
+@file:Suppress("DEPRECATION")
+
 package com.saloYD.ciphermessage
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
-import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,12 +15,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import android.graphics.Bitmap
-import android.os.Parcel
-import android.os.Parcelable
 import com.saloYD.ciphermessage.Classes.User
-import kotlinx.android.parcel.Parcelize
-import kotlin.reflect.typeOf
 
 class MainActivity : AppCompatActivity() {
 

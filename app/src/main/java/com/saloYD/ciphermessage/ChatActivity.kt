@@ -250,9 +250,6 @@ class ChatActivity : AppCompatActivity() {
     private fun decrypt(s: String, key: Int): String {
         return encrypt(s, 26 - key)
     }
-
-    fun compute(body: (foo: String) -> Unit) { body.invoke("problem solved") }
-
 }
 
 class ChatFromItem(val userText : String, val user : User) : Item<GroupieViewHolder>() {
