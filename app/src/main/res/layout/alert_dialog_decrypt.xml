@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Message user text content"
-            android:layout_margin="4dp"
+            android:layout_margin="8dp"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="20sp"
             android:fontFamily="@font/ubuntu_font"/>
@@ -53,7 +53,10 @@
             android:hint="@string/enter_cipher_key_string"
             android:textColorHint="@color/colorCuteGrey"
             android:textColor="@color/colorMatrixGreen"
-            android:backgroundTint="@color/colorMatrixGreen"/>
+            android:backgroundTintMode="src_in"
+            android:background="@drawable/edittext_style"
+            android:padding="10dp"
+            android:inputType="phone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -67,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorMatrixGreen"
-            android:layout_margin="4dp"
+            android:layout_margin="8dp"
             android:text="@string/ok_string"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"

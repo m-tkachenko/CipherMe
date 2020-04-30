@@ -15,5 +15,7 @@
     <string name="decrypt_title_alert_dialog">Decrypt message</string>
     <string name="encrypt_title_alert_dialog">Encrypt message</string>
     <string name="decrypted_message_title_alert_dialog">Decrypted message</string>
+    <string name="enter_message_string">Enter message</string>
+    <string name="creators_string">Creators</string>
 </resources>
 

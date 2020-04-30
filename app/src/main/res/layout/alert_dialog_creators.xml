@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorCoolGrey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/creators_string"
+            android:textColor="@color/colorCoolOrange"
+            android:textSize="30sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mykhailo Tkachenko"
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="25sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nr albumu: 24932"
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="20sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_marginTop="-8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Karyna Prylutska"
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="25sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nr albumu: 24929"
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="20sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_marginTop="-8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/ok_button_creators"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_string"
+            android:textColor="@color/colorCoolWhite"
+            android:fontFamily="@font/ubuntu_font"
+            android:textSize="20sp"
+            android:background="@color/colorMatrixGreen"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
+</LinearLayout>

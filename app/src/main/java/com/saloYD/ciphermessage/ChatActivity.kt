@@ -18,10 +18,8 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_chat.*
-import kotlinx.android.synthetic.main.alert_dialog_decrypt.*
 import kotlinx.android.synthetic.main.alert_dialog_decrypt.view.*
 import kotlinx.android.synthetic.main.alert_dialog_decrypt.view.textview_message_content_decrypt
-import kotlinx.android.synthetic.main.alert_dialog_decrypted_message.*
 import kotlinx.android.synthetic.main.alert_dialog_decrypted_message.view.*
 import kotlinx.android.synthetic.main.alert_dialog_decrypted_message.view.decrypted_message_textview
 import kotlinx.android.synthetic.main.alert_dialog_encrypt.view.*
@@ -30,31 +28,6 @@ import kotlinx.android.synthetic.main.users_row_chat_to.view.*
 
 
 class ChatActivity : AppCompatActivity() {
-
-    fun encrypt(s: String, key: Int): String {
-        val offset = key % 26
-        if (offset == 0) return s
-        var d: Char
-        val chars = CharArray(s.length)
-        for ((index, c) in s.withIndex()) {
-            if (c in 'A'..'Z') {
-                d = c + offset
-                if (d > 'Z') d -= 26
-            }
-            else if (c in 'a'..'z') {
-                d = c + offset
-                if (d > 'z') d -= 26
-            }
-            else
-                d = c
-            chars[index] = d
-        }
-        return chars.joinToString("")
-    }
-
-    fun decrypt(s: String, key: Int): String {
-        return encrypt(s, 26 - key)
-    }
 
     companion object {
         val TAG = "ChatActivity"
@@ -97,10 +70,12 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun listenForMessages() {
-
         val fromId = FirebaseAuth.getInstance().uid
+        val toUri = toUser?.userImage
         val toId = toUser?.userUid
         val reference = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId")
+
+        Picasso.get().load(toUri).into(circle_username_photo_in_chat)
 
         reference.addChildEventListener(object: ChildEventListener{
 
@@ -122,8 +97,12 @@ class ChatActivity : AppCompatActivity() {
                         }
                     }
                     else {
-
                         adapter.add(ChatToItem(chatMessage.text, toUser!!))
+
+                        adapter.setOnItemClickListener { item, view ->
+
+                            alertDialogDecrypt(chatMessage.text)
+                        }
                     }
                 }
 
@@ -138,7 +117,6 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun alertDialogDecrypt(messageContent: String) {
-
         val dViewDecrypt = LayoutInflater.from(this).inflate(R.layout.alert_dialog_decrypt, null)
         val dBuilderDecrypt = AlertDialog.Builder(this)
             .setView(dViewDecrypt)
@@ -150,7 +128,7 @@ class ChatActivity : AppCompatActivity() {
         dViewDecrypt.ok_button_key_decrypt.setOnClickListener {
 
             val cipherKeyDecrypt = dViewDecrypt.edittext_key_cipher_decrypt.text.toString().toInt()
-            var messageDecrypted = decrypt(messageContent, cipherKeyDecrypt)
+            val messageDecrypted = decrypt(messageContent, cipherKeyDecrypt)
 
             alertDialogDecryptedMessage(messageDecrypted)
 
@@ -159,7 +137,6 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun alertDialogDecryptedMessage(messageDecryptedContent: String) {
-
         val dViewDecryptedMessage = LayoutInflater.from(this).inflate(R.layout.alert_dialog_decrypted_message, null)
         val dBuilderDecryptedMessage = AlertDialog.Builder(this)
             .setView(dViewDecryptedMessage)
@@ -175,7 +152,6 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun alertDialogEncrypt() {
-
         val dViewEncrypt = LayoutInflater.from(this).inflate(R.layout.alert_dialog_encrypt, null)
         val dBuilderEncrypt = AlertDialog.Builder(this)
             .setView(dViewEncrypt)
@@ -189,7 +165,6 @@ class ChatActivity : AppCompatActivity() {
             alertDialogEncrypt.dismiss()
             doEncryptMessages(cipherKeyEncrypt)
         }
-
     }
 
     private fun doEncryptMessages(cipherKey: Int) {
@@ -249,6 +224,31 @@ class ChatActivity : AppCompatActivity() {
 
         val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
         latestMessageToRef.setValue(chatMessage)
+    }
+
+    private fun encrypt(s: String, key: Int): String {
+        val offset = key % 26
+        if (offset == 0) return s
+        var d: Char
+        val chars = CharArray(s.length)
+        for ((index, c) in s.withIndex()) {
+            if (c in 'A'..'Z') {
+                d = c + offset
+                if (d > 'Z') d -= 26
+            }
+            else if (c in 'a'..'z') {
+                d = c + offset
+                if (d > 'z') d -= 26
+            }
+            else
+                d = c
+            chars[index] = d
+        }
+        return chars.joinToString("")
+    }
+
+    private fun decrypt(s: String, key: Int): String {
+        return encrypt(s, 26 - key)
     }
 
     fun compute(body: (foo: String) -> Unit) { body.invoke("problem solved") }

@@ -21,39 +21,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="56dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginEnd="35dp"
             android:fontFamily="@font/ubuntu_font"
             android:text="@string/cipherme_string"
             android:textColor="@color/colorMatrixGreen"
-            android:textSize="30sp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="56dp" />
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/new_message_button_activity"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="11dp"
-            android:layout_marginRight="12dp"
+            android:layout_centerVertical="true"
             android:layout_toEndOf="@id/cipherme_text_view"
-            android:background="@drawable/new_message_icon_button"
             android:layout_toRightOf="@id/cipherme_text_view"
-            />
+            android:layout_marginRight="13dp"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/new_message_icon_button" />
 
         <Button
             android:id="@+id/sign_out_button"
             android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_height="44dp"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="11dp"
             android:layout_toEndOf="@id/new_message_button_activity"
             android:layout_toRightOf="@id/new_message_button_activity"
-            android:background="@drawable/signout_icon_button"
-            android:layout_marginStart="8dp" />
+            android:background="@drawable/signout_icon_button" />
+
+        <Button
+            android:id="@+id/creators_button"
+            android:layout_width="40dp"
+            android:layout_height="41dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/creators_button_style" />
 
     </RelativeLayout>
 

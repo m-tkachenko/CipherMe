@@ -19,44 +19,58 @@
         <Button
             android:id="@+id/return_to_messages_button"
             android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/arrow_back_style_button"
-            android:layout_marginStart="16dp" />
+            android:background="@drawable/arrow_back_style_button" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_username_photo_in_chat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/return_to_messages_button"
+            android:layout_toEndOf="@id/return_to_messages_button"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/colorMatrixGreen"/>
 
         <TextView
             android:id="@+id/username_textview_chat_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/return_to_messages_button"
+            android:layout_toRightOf="@id/circle_username_photo_in_chat"
+            android:layout_toEndOf="@id/circle_username_photo_in_chat"
             android:fontFamily="@font/ubuntu_font"
             android:textColor="@color/colorMatrixGreen"
             android:textSize="30sp"
             android:layout_centerVertical="true"
-            android:text="Username"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="32dp"
-            android:layout_toEndOf="@id/return_to_messages_button"
-            android:layout_marginStart="32dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="Username" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/chating_edittext_layout"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#8e8e8e">
+        android:layout_height="60dp">
 
         <EditText
             android:id="@+id/new_message_edittext"
-            android:textColor="@color/colorCoolGrey"
+            android:textColor="@color/colorCoolWhite"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/ubuntu_font"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:hint="Enter message"
+            android:backgroundTintMode="src_in"
+            android:background="@drawable/edittext_style"
+            android:padding="10dp"
+            android:hint="@string/enter_message_string"
+            android:textColorHint="@color/colorCuteGrey"
             android:layout_centerVertical="true" />
 
         <Button

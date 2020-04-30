@@ -14,7 +14,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:civ_border_width="2dp"
+        app:civ_border_width="1dp"
         app:civ_border_color="@color/colorMatrixGreen" />
 
     <TextView
