@@ -19,7 +19,7 @@
             android:text="@string/encrypt_title_alert_dialog"
             android:fontFamily="@font/ubuntu_font"
             android:textColor="@color/colorCoolWhite"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:layout_margin="12dp"/>
     </LinearLayout>
 

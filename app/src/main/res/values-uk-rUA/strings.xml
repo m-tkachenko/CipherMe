@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CipherMe</string>
+    <string name="question_account_text">Вже є аккаунт?</string>
+    <string name="back_to_registration_text_button">Повернутися к реєстрації</string>
+    <string name="select_user_string">Користувачі</string>
+    <string name="enter_cipher_key_string">Ключ шифрування</string>
+    <string name="decrypt_title_alert_dialog">Розшифрувати повідомлення</string>
+    <string name="encrypt_title_alert_dialog">Зашифрувати повідомлення</string>
+    <string name="decrypted_message_title_alert_dialog">Розшифроване повідомлення</string>
+    <string name="creators_string">Творці</string>
+    <string name="easter_egg_God">Бог кохає тебе!</string>
+    <string name="text_me_string">\@gibygreen напиши до мене :)</string>
+    <string name="maybe_time_string">Може час повернутися до дому?</string>
+    <string name="He_wait">Він чекає на тебе в дому.</string>
+    <string name="He_died">Він помер за тебе кресті.</string>
+    <string name="He_loves">Він тебе шалено кохає.</string>
+    <string name="enter_message_string">Повідомлення</string>
+</resources>

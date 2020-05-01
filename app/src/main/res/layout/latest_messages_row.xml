@@ -26,5 +26,4 @@
         android:text="@string/username_default_string"
         android:textSize="28sp"
         android:textColor="@color/colorMatrixGreen"/>
-
 </RelativeLayout>

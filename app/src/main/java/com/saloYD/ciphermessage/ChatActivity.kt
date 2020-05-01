@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
@@ -127,12 +128,28 @@ class ChatActivity : AppCompatActivity() {
 
         dViewDecrypt.ok_button_key_decrypt.setOnClickListener {
 
-            val cipherKeyDecrypt = dViewDecrypt.edittext_key_cipher_decrypt.text.toString().toInt()
-            val messageDecrypted = decrypt(messageContent, cipherKeyDecrypt)
+            val cipherKeyDecryptString = dViewDecrypt.edittext_key_cipher_decrypt.text.toString()
 
-            alertDialogDecryptedMessage(messageDecrypted)
+            if(cipherKeyDecryptString.isEmpty()) {
 
-            alertDialogDecrypt.dismiss()
+                Toast.makeText(this, "Please enter cipher key", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val cipherKeyDecrypt = cipherKeyDecryptString.toInt()
+
+                if(cipherKeyDecrypt > 26 || cipherKeyDecrypt < 0) {
+
+                    Toast.makeText(this, "Key must be less than 26 and more than 0", Toast.LENGTH_SHORT).show()
+                    dViewDecrypt.edittext_key_cipher_decrypt.text.clear()
+                }
+                else {
+
+                    val messageDecrypted = decrypt(messageContent, cipherKeyDecrypt)
+
+                    alertDialogDecryptedMessage(messageDecrypted)
+                    alertDialogDecrypt.dismiss()
+                }
+            }
         }
     }
 
@@ -160,10 +177,26 @@ class ChatActivity : AppCompatActivity() {
 
         dViewEncrypt.ok_button_key_encrypt.setOnClickListener {
 
-            val cipherKeyEncrypt = dViewEncrypt.edittext_key_cipher_encrypt.text.toString().toInt()
+            val cipherKryEncryptString = dViewEncrypt.edittext_key_cipher_encrypt.text.toString()
 
-            alertDialogEncrypt.dismiss()
-            doEncryptMessages(cipherKeyEncrypt)
+            if (cipherKryEncryptString.isEmpty()) {
+
+                Toast.makeText(this, "Please enter cipher key", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val cipherKeyEncrypt = cipherKryEncryptString.toInt()
+
+                if(cipherKeyEncrypt > 26 || cipherKeyEncrypt < 0) {
+
+                    Toast.makeText(this, "Key must be less than 26 and more than 0", Toast.LENGTH_SHORT).show()
+                    dViewEncrypt.edittext_key_cipher_encrypt.text.clear()
+                }
+                else {
+
+                    alertDialogEncrypt.dismiss()
+                    doEncryptMessages(cipherKeyEncrypt)
+                }
+            }
         }
     }
 
@@ -183,15 +216,22 @@ class ChatActivity : AppCompatActivity() {
 
         val chatMessage = ChatMessage(fromReference.key!!, messageText, fromId, toId, System.currentTimeMillis() / 1000)
 
-        fromReference.setValue(chatMessage)
-            .addOnSuccessListener {
+        if(encryptMessage.isEmpty()) {
 
-                Log.d(TAG, "Encrypt message saved to firebase: ${fromReference.key}")
-                new_message_edittext.text.clear()
-                recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
-            }
+            Toast.makeText(this, "Please enter message", Toast.LENGTH_SHORT).show()
+        }
+        else {
 
-        toReference.setValue(chatMessage)
+            fromReference.setValue(chatMessage)
+                .addOnSuccessListener {
+
+                    Log.d(TAG, "Encrypt message saved to firebase: ${fromReference.key}")
+                    new_message_edittext.text.clear()
+                    recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
+                }
+
+            toReference.setValue(chatMessage)
+        }
     }
 
 
@@ -209,21 +249,22 @@ class ChatActivity : AppCompatActivity() {
 
         val chatMessage = ChatMessage(fromReference.key!!, messageText, fromId, toId, System.currentTimeMillis() / 1000)
 
-        fromReference.setValue(chatMessage)
-            .addOnSuccessListener {
+        if(messageText.isEmpty()) {
 
-                Log.d(TAG, "Message saved to firebase: ${fromReference.key}")
-                new_message_edittext.text.clear()
-                recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
-            }
+            Toast.makeText(this, "Please enter message", Toast.LENGTH_SHORT).show()
+        }
+        else {
 
-        toReference.setValue(chatMessage)
+            fromReference.setValue(chatMessage)
+                .addOnSuccessListener {
 
-        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
-        latestMessageRef.setValue(chatMessage)
+                    Log.d(TAG, "Message saved to firebase: ${fromReference.key}")
+                    new_message_edittext.text.clear()
+                    recyclerview_chat.scrollToPosition(adapter.itemCount - 1)
+                }
 
-        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
-        latestMessageToRef.setValue(chatMessage)
+            toReference.setValue(chatMessage)
+        }
     }
 
     private fun encrypt(s: String, key: Int): String {

@@ -21,9 +21,10 @@
             android:textColor="@color/colorCoolOrange"
             android:textSize="30sp"
             android:fontFamily="@font/ubuntu_font"
-            android:layout_margin="8dp"/>
+            android:layout_margin="16dp"/>
 
         <TextView
+            android:id="@+id/creator_misha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/creator_misha"
@@ -33,6 +34,7 @@
             android:layout_margin="8dp"/>
 
         <TextView
+            android:id="@+id/creator_misha_album"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/creator_misha_album"
@@ -42,6 +44,7 @@
             android:layout_marginTop="-8dp"/>
 
         <TextView
+            android:id="@+id/creator_karyna"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/creator_karyna"
@@ -52,6 +55,7 @@
             android:layout_marginBottom="8dp"/>
 
         <TextView
+            android:id="@+id/creator_karyna_album"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/creator_karyna_album"
@@ -59,6 +63,16 @@
             android:textSize="20sp"
             android:fontFamily="@font/ubuntu_font"
             android:layout_marginTop="-8dp"/>
+
+        <TextView
+            android:id="@+id/gibygreen_text_me_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorMatrixGreen"
+            android:textSize="20sp"
+            android:fontFamily="@font/ubuntu_font"
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 

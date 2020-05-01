@@ -49,7 +49,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
-            android:text="Username" />
+            android:text="@string/username_default_string" />
     </RelativeLayout>
 
     <RelativeLayout

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">CipherMe</string>
+    <string name="app_name">CipherMe</string>
     <string name="question_account_text">Already have an account?</string>
     <string name="sign_up_button_text" translatable="false">Sign Up</string>
     <string name="password_text_hint" translatable="false">Password</string>
@@ -7,22 +7,28 @@
     <string name="username_text_hint" translatable="false">Username</string>
     <string name="sign_in_button_text" translatable="false">Sign In</string>
     <string name="back_to_registration_text_button">Back to registration</string>
-    <string name="photo_text_button">Select photo</string>
-    <string name="cipherme_string">CipherMe</string>
-    <string name="select_user_string">Select user</string>
-    <string name="ok_string">OK</string>
-    <string name="enter_cipher_key_string">Enter cipher key</string>
+    <string name="photo_text_button" translatable="false">Select photo</string>
+    <string name="cipherme_string" translatable="false">CipherMe</string>
+    <string name="select_user_string">Users</string>
+    <string name="ok_string" translatable="false">OK</string>
+    <string name="enter_cipher_key_string">Сipher key</string>
     <string name="decrypt_title_alert_dialog">Decrypt message</string>
     <string name="encrypt_title_alert_dialog">Encrypt message</string>
     <string name="decrypted_message_title_alert_dialog">Decrypted message</string>
-    <string name="enter_message_string">Enter message</string>
+    <string name="enter_message_string">Message</string>
     <string name="creators_string">Creators</string>
-    <string name="creator_misha">Mykhailo Tkachenko</string>
-    <string name="creator_misha_album">Nr albumu: 24932</string>
-    <string name="creator_karyna">Karyna Prylutska</string>
-    <string name="creator_karyna_album">Nr albumu: 24929</string>
-    <string name="default_decrypt_text">Message user text content</string>
-    <string name="username_default_string">Username</string>
-    <string name="message_default_string">Message</string>
+    <string name="creator_misha" translatable="false">Mykhailo Tkachenko</string>
+    <string name="creator_misha_album" translatable="false">Nr albumu: 24932</string>
+    <string name="creator_karyna" translatable="false">Karyna Prylutska</string>
+    <string name="creator_karyna_album" translatable="false">Nr albumu: 24929</string>
+    <string name="default_decrypt_text" translatable="false">Message user text content</string>
+    <string name="username_default_string" translatable="false">Username</string>
+    <string name="message_default_string" translatable="false">Message</string>
+    <string name="easter_egg_God">God loves you!</string>
+    <string name="He_loves">He loves you very much.</string>
+    <string name="He_died">He died on the cross for you.</string>
+    <string name="He_wait">He wait for you at home.</string>
+    <string name="maybe_time_string">Maybe it is time to go home?</string>
+    <string name="text_me_string">\@gibygreen text me :)</string>
 </resources>
 

@@ -127,7 +127,12 @@ class MessagesActivity : AppCompatActivity() {
 
         val alertDialogCreator = dBuilderCreator.show()
 
-        dViewCreator.creators_string.text = "God loves you!"
+        dViewCreator.creators_string.text = getString(R.string.easter_egg_God)
+        dViewCreator.creator_misha.text = getString(R.string.He_loves)
+        dViewCreator.creator_misha_album.text = getString(R.string.He_died)
+        dViewCreator.creator_karyna.text = getString(R.string.He_wait)
+        dViewCreator.creator_karyna_album.text = getString(R.string.maybe_time_string)
+        dViewCreator.gibygreen_text_me_string.text = getString(R.string.text_me_string)
 
         dViewCreator.ok_button_creators.setOnClickListener { alertDialogCreator.dismiss() }
     }

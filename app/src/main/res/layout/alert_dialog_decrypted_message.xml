@@ -18,7 +18,7 @@
             android:text="@string/decrypted_message_title_alert_dialog"
             android:fontFamily="@font/ubuntu_font"
             android:textColor="@color/colorCoolWhite"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:layout_margin="12dp"/>
     </LinearLayout>
 
@@ -31,12 +31,14 @@
         <TextView
             android:id="@+id/decrypted_message_textview"
             android:layout_width="wrap_content"
+            android:textAlignment="center"
             android:layout_height="wrap_content"
             android:text="@string/decrypted_message_title_alert_dialog"
             android:textColor="@color/colorMatrixGreen"
             android:fontFamily="@font/ubuntu_font"
             android:textSize="25sp"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal" />
     </LinearLayout>
 
     <LinearLayout

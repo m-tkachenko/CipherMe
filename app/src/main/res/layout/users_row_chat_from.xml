@@ -34,7 +34,4 @@
         android:maxWidth="312dp"
         android:text="@string/message_default_string"
         android:textColor="@color/colorMatrixGreen"/>
-
-
-
 </RelativeLayout>

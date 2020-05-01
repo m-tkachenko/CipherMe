@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CipherMe</string>
+    <string name="question_account_text">Juz masz konto?</string>
+    <string name="back_to_registration_text_button">Wrócić do rejestracii</string>
+    <string name="select_user_string">Użytkowniki</string>
+    <string name="enter_cipher_key_string">Klucz szyfrowania</string>
+    <string name="decrypt_title_alert_dialog">Odszyfrować wiadomość</string>
+    <string name="encrypt_title_alert_dialog">Zaszyfrować wiadomość</string>
+    <string name="decrypted_message_title_alert_dialog">Odszyfrowana wiadomość</string>
+    <string name="creators_string">Twórcy</string>
+    <string name="easter_egg_God">Bóg kocha ciebie!</string>
+    <string name="He_loves">On bardzo cię kocha.</string>
+    <string name="He_died">On umarł za ciebie na chrzcie.</string>
+    <string name="He_wait">On czeka na ciebie w domu.</string>
+    <string name="maybe_time_string">Może to czas iść do domu?</string>
+    <string name="text_me_string">\@gibygreen napisz mnie :)</string>
+    <string name="enter_message_string">Wiadomość</string>
+</resources>
