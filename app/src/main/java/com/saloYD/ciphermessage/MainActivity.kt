@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         sign_up_button.setOnClickListener {
             doRegister()
+            sign_up_button.isEnabled = false
+            sign_up_button.isClickable = false
         }
 
         button_textview_account.setOnClickListener{

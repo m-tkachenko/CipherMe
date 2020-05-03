@@ -17,6 +17,8 @@ class LoginActivity : AppCompatActivity() {
 
         sign_in_button.setOnClickListener {
             doSignIn()
+            sign_in_button.isEnabled = false
+            sign_in_button.isClickable = false
         }
 
         button_textview_back_to_reg.setOnClickListener {
